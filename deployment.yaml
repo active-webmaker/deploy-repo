@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
-  namespace: app
+  name: sample-app
+  labels:
+    app: sample-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: sample-app
   template:
     metadata:
       labels:
-        app: myapp
+        app: sample-app
     spec:
       containers:
-      - name: myapp
-        image: myapp:latest
+      - name: sample-app
+        image: aderbart/aws-cicd-repo:v11
         ports:
-        - containerPort: 80
+        - containerPort: 8000
+        imagePullPolicy: Always
