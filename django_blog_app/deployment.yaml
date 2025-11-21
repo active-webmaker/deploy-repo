@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: django-blog-app
-        image: aderbart/django-blog-app:v16
+        image: aderbart/django-blog-app:v17
         ports:
         - containerPort: 8000
         env:
@@ -25,6 +25,8 @@ spec:
           value: "1"
         - name: PYTHONDONTWRITEBYTECODE
           value: "1"
+        - name: ALLOWED_HOSTS
+          value: "*"
         readinessProbe:
           httpGet:
             path: /
