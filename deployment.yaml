@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: aderbart/aws-cicd-repo:v11
+        image: aderbart/aws-cicd-repo:v12
         ports:
         - containerPort: 8000
         imagePullPolicy: Always
